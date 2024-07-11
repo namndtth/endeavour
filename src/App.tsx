@@ -1,9 +1,21 @@
-import React from "react";
-import { Button } from "antd";
+import React, { useState } from 'react'
+import { Button } from 'antd'
+
+import { CreateTaskModal } from 'features/tasks/create-task-modal'
 
 function App() {
-  const handle;
-  return <Button>Open modal</Button>;
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleOpenModal = () => {
+        setIsOpen(true)
+    }
+
+    return (
+        <>
+            <Button onClick={handleOpenModal}>Open modal</Button>
+            <CreateTaskModal isOpen={isOpen} setIsOpen={setIsOpen} />
+        </>
+    )
 }
 
-export default App;
+export default App
