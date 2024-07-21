@@ -7,11 +7,3 @@ export const Button = styled(antd.Button)`
     background-color: #f24e1e;
     color: white;
 `;
-
-export const Modal = styled(antd.Modal)`
-    .ant-modal {
-        .ant-modal-footer {
-            align-items: start;
-        }
-    }
-`;

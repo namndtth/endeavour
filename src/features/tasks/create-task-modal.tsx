@@ -1,9 +1,5 @@
-import { Modal, Button } from 'components/button';
-import {
-    ProForm,
-    ProFormUploadDragger,
-    ProFormText,
-} from '@ant-design/pro-components';
+import { Button, Modal } from 'antd';
+import { CreateTaskForm } from 'features/tasks/create-task-form';
 
 type CreateTaskProps = {
     isOpen: boolean;
@@ -23,21 +19,28 @@ export const CreateTaskModal = (props: CreateTaskProps) => {
 
     return (
         <Modal
-            footer={<Button>Done</Button>}
+            footer={null}
             open={isOpen}
             onOk={handleOk}
             onCancel={handleCancel}
+            width="1024px"
         >
-            <>
-                Add new task
-                <Button>Go back</Button>
-            </>
-            <ProForm>
-                <ProForm.Group>
-                    <ProFormText></ProFormText>
-                    <ProFormUploadDragger></ProFormUploadDragger>
-                </ProForm.Group>
-            </ProForm>
+            <div className="flex flex-col gap-4">
+                <div className="flex flex-row justify-between h-6">
+                    <div className="inline-block text-lg font-bold">
+                        Add New Task
+                    </div>
+                    <Button className="text-lg font-bold border-none underline">
+                        Go Back
+                    </Button>
+                </div>
+
+                <CreateTaskForm />
+
+                <div className="flex flex-start">
+                    <Button className="caret-amber-500">Done</Button>
+                </div>
+            </div>
         </Modal>
     );
 };
