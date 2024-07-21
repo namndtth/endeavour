@@ -7,7 +7,7 @@
       "esnext"
     ],
     "baseUrl": "src",
-    /*"paths": {
+    /*"paths":
       "@*//*": [
         "./src*//*"
       ]
